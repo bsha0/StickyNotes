@@ -1,0 +1,59 @@
+﻿<Window
+    x:Class="StickyNotes.UI.Views.NoteItemWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:StickyNotes.UI.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:StickyNotes.UI.Helpers"
+    xmlns:local="clr-namespace:StickyNotes.UI.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Note Item"
+    Width="500"
+    Height="500"
+    WindowStyle="ToolWindow"
+    mc:Ignorable="d">
+    <Window.Resources />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <RichTextBox helpers:RichTextBoxHelper.DocumentXaml="{Binding NoteItem.Content}" AcceptsTab="True" />
+        <ToolBar Grid.Row="1">
+            <Button Command="ApplicationCommands.Undo" ToolTip="Undo">
+                <Image Source="..\Resources\Images\Undo.png" />
+            </Button>
+            <Button Command="ApplicationCommands.Redo" ToolTip="Redo">
+                <Image Source="..\Resources\Images\Redo.png" />
+            </Button>
+
+            <Button Command="EditingCommands.ToggleBold" ToolTip="Bold">
+                <Image Source="..\Resources\Images\Bold.png" />
+            </Button>
+            <Button Command="EditingCommands.ToggleItalic" ToolTip="Italic">
+                <Image Source="..\Resources\Images\Italic.png" />
+            </Button>
+            <Button Command="EditingCommands.ToggleUnderline" ToolTip="Underline">
+                <Image Source="..\Resources\Images\Underline.png" />
+            </Button>
+            <Button Command="EditingCommands.IncreaseFontSize" ToolTip="Grow Font">
+                <Image Source="..\Resources\Images\IncreaseFontSize.png" />
+            </Button>
+            <Button Command="EditingCommands.DecreaseFontSize" ToolTip="Shrink Font">
+                <Image Source="..\Resources\Images\DecreaseFontSize.png" />
+            </Button>
+            <Button Command="EditingCommands.ToggleBullets" ToolTip="Bullets">
+                <Image Source="..\Resources\Images\BulletList.png" />
+            </Button>
+            <Button Command="EditingCommands.AlignLeft" ToolTip="Align Left">
+                <Image Source="..\Resources\Images\AlignLeft.png" />
+            </Button>
+            <Button Command="EditingCommands.AlignCenter" ToolTip="Align Center">
+                <Image Source="..\Resources\Images\AlignMiddle.png" />
+            </Button>
+            <Button Command="EditingCommands.AlignRight" ToolTip="Align Right">
+                <Image Source="..\Resources\Images\AlignRight.png" />
+            </Button>
+        </ToolBar>
+    </Grid>
+</Window>

@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ApplicationIcon>Resources\Images\AppIcon.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\Images\AlignCenter.png" />
+		<None Remove="Resources\Images\AlignLeft.png" />
+		<None Remove="Resources\Images\AlignMiddle.png" />
+		<None Remove="Resources\Images\AlignRight.png" />
+		<None Remove="Resources\Images\AppIcon.ico" />
+		<None Remove="Resources\Images\AppIcon.png" />
+		<None Remove="Resources\Images\Bold.png" />
+		<None Remove="Resources\Images\BulletList.png" />
+		<None Remove="Resources\Images\DecreaseFontSize.png" />
+		<None Remove="Resources\Images\IncreaseFontSize.png" />
+		<None Remove="Resources\Images\Italic.png" />
+		<None Remove="Resources\Images\NotifyIcon.png" />
+		<None Remove="Resources\Images\Redo.png" />
+		<None Remove="Resources\Images\Underline.png" />
+		<None Remove="Resources\Images\Undo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\Images\AppIcon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Images\AppIcon.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Controls\" />
+		<Folder Include="Models\" />
+		<Folder Include="Resources\Styles\Controls\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="System.Windows.Forms">
+			<HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\StickyNotes.Core\StickyNotes.Core.csproj" />
+		<ProjectReference Include="..\StickyNotes.Data\StickyNotes.Data.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Resources\Images\AlignCenter.png" />
+		<Resource Include="Resources\Images\AlignLeft.png" />
+		<Resource Include="Resources\Images\AlignMiddle.png" />
+		<Resource Include="Resources\Images\AlignRight.png" />
+		<Resource Include="Resources\Images\AppIcon.png" />
+		<Resource Include="Resources\Images\Bold.png" />
+		<Resource Include="Resources\Images\BulletList.png" />
+		<Resource Include="Resources\Images\DecreaseFontSize.png" />
+		<Resource Include="Resources\Images\IncreaseFontSize.png" />
+		<Resource Include="Resources\Images\Italic.png" />
+		<Resource Include="Resources\Images\Redo.png" />
+		<Resource Include="Resources\Images\Underline.png" />
+		<Resource Include="Resources\Images\Undo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="AppSettings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>AppSettings.settings</DependentUpon>
+		</Compile>
+		<Compile Update="Resources\Localization\AppResource.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>AppResource.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Resources\Localization\AppResource.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Resources\Localization\AppResource.zh-Hans.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="AppSettings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>AppSettings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+</Project>
